@@ -14,17 +14,26 @@
     if (!($plik)) {
         echo "Jeszcze nie ma żadnych wpisów";
     } else {
-        while (!(feof($plik))) {
-            $tytul = fgets($plik);
-            $tresc = fgets($plik);
-            $podpis = fgets($plik);
-            echo "<article>";
-            echo "<header>$tytul</header>";
-            echo "<main>$tresc</main>";
-            echo "<footer>$podpis</footer>";
-            echo "</arcicle>";
-        }
+        $dane = fread($plik, filesize("baza.txt"));
+        $tablica = explode(';', $dane);
+        //print_r($tablica);
         fclose($plik);
+            $poz = 0;
+            while($poz < count($tablica) && !empty($tablica[$poz]))
+            {
+
+                $tytul = $tablica[$poz++];
+                $tresc = $tablica[$poz++];
+                $podpis =$tablica[$poz++];
+                
+                echo "<article>";
+                echo "<header><b>$tytul</b></header>";
+                echo "<main><pre>$tresc</pre></main>";
+                echo "<footer>$podpis</footer>";
+                echo "</arcicle>";
+                echo "<hr>";
+            }
+
     }
     ?>
 </body>
