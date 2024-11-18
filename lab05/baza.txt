@@ -1,0 +1,5 @@
+Pierwszy post;To jest treść pierwszego wpisu. To jest treść pierwszego wpisu.
+To jest treść pierwszego wpisu.
+To jest treść pierwszego wpisu.;Jan Kowalski;To jest mój drugi post;To jest treść drugiego wpisu. 
+To jest treść drugiego wpisu. 
+To jest treść drugiego wpisu. ;Kowalski;
